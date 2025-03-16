@@ -28,8 +28,7 @@ resource "azurerm_linux_web_app" "backend" {
     REDIS_CONNECTION_STRING                  = module.queue_system.redis_connection_string
     SIGNALR_CONNECTION_STRING                = module.realtime.signalr_primary_connection_string
     STORAGE_CONNECTION_STRING                = module.storage.storage_account_primary_key
-    STORAGE_CONTAINER_URL                   = module.storage.storage_container_url 
-
+    STORAGE_CONTAINER_NAME                  = var.storage_container_name
   }
 
   identity {
