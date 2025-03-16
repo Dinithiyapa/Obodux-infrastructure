@@ -29,16 +29,8 @@ variable "database_connection_string" {
   type        = string
 }
 
-variable "clerk_secret_key" {
-  description = "Clerk secret key for authentication"
-  type        = string
-  sensitive   = true
-}
 
-variable "clerk_publishable_key" {
-  description = "Clerk publishable key"
-  type        = string
-}
+
 
 variable "redis_connection_string" {
   description = "Redis connection string for BullMQ"
@@ -64,7 +56,7 @@ variable "storage_account_primary_key" {
   sensitive   = true
 }
 
-variable "storage_container_url" {
+variable "storage_container_name" {
   description = "The name of the Blob Storage container"
   type        = string
 }
