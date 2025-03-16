@@ -8,29 +8,29 @@ resource "azurerm_signalr_service" "signalr" {
     capacity = var.sku_capacity
   }
 
-  # Service mode (Default / Classic / Serverless)
+  # Define the service mode (Default, Classic, Serverless)
   service_mode = "Default"
 
   # Enable TLS for secure connections
   tls_client_cert_enabled = true
 
-  # Optional: Enable CORS
+  # CORS Configuration (Optional)
   cors {
-    allowed_origins = ["https://myfrontend.com", "https://anotherdomain.com"]
+    allowed_origins = var.allowed_origins
   }
 
-  # Optional: Disable public network access 
-  public_network_access_enabled = false
+  # Public Network Access
+  public_network_access_enabled = var.public_network_access_enabled
 
-  # Optional: Enable logging
-  connectivity_logs_enabled = true
-  messaging_logs_enabled    = true
+  # Enable Logging
+  connectivity_logs_enabled = var.connectivity_logs_enabled
+  messaging_logs_enabled    = var.messaging_logs_enabled
 
-  # Optional: Upstream endpoints 
+  # Upstream Configuration (Optional)
   upstream_endpoint {
     category_pattern = ["connections", "messages"]
     event_pattern    = ["*"]
-    hub_pattern      = ["hub1"]
-    url_template     = "https://mybackend.com"
+    hub_pattern      = var.hub_pattern
+    url_template     = var.upstream_url
   }
 }
