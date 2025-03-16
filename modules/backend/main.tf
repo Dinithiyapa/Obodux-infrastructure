@@ -28,6 +28,11 @@ resource "azurerm_linux_web_app" "backend" {
     REDIS_CONNECTION_STRING                  = module.queue_system.redis_connection_string
     CLERK_SECRET_KEY                         = var.clerk_secret_key
     CLERK_PUBLISHABLE_KEY                    = var.clerk_publishable_key
+    CLERK_JWT_ALGORITHM                      = var.clerk_jwt_algorithm
+    SIGNALR_CONNECTION_STRING                = module.signalr.signalr_primary_connection_string
+    STORAGE_CONNECTION_STRING                = module.storage.storage_account_primary_key
+    STORAGE_CONTAINER_NAME                   = module.storage.storage_container_url
+
   }
 
   identity {
