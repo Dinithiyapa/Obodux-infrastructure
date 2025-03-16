@@ -1,9 +1,20 @@
+# SignalR Service
 resource "azurerm_signalr_service" "signalr" {
-  name                = "obodux-signalr"
+  name                = var.signalr_name
   location            = var.location
   resource_group_name = var.resource_group_name
+
   sku {
-    name     = "Standard_S1"
-    capacity = 1
+    name     = var.sku_name
+    capacity = var.sku_capacity
   }
+
+  # Enable WebSocket and REST APIs
+  features {
+    flag  = "ServiceMode"
+    value = "Default"
+  }
+
+  # Enforce secure connections
+  tls_client_cert_enabled = true
 }
