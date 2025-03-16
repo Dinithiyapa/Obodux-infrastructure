@@ -8,11 +8,7 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "redis_sku" {
-  description = "Redis pricing tier"
-  type        = string
-  default     = "Premium"
-}
+
 
 variable "storage_account_connection_string" {
   description = "Storage account connection string for Redis persistence"
