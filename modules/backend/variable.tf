@@ -49,22 +49,8 @@ variable "notifications_service_connection_string" {
   description = "Azure Communication Services connection string"
   type        = string
 }
-variable "clerk_secret_key" {
-  description = "Clerk secret key for authentication"
-  type        = string
-  sensitive   = true
-}
 
-variable "clerk_publishable_key" {
-  description = "Clerk publishable key for authentication"
-  type        = string
-}
 
-variable "clerk_jwt_algorithm" {
-  description = "Algorithm used for Clerk JWT"
-  type        = string
-  default     = "RS256"
-}
 
 # Storage Variables
 variable "storage_account_name" {
@@ -78,7 +64,7 @@ variable "storage_account_primary_key" {
   sensitive   = true
 }
 
-variable "storage_container_name" {
+variable "storage_container_url" {
   description = "The name of the Blob Storage container"
   type        = string
 }
