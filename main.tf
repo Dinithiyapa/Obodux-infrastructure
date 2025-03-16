@@ -35,7 +35,7 @@ module "storage" {
   storage_tier            = var.storage_tier
   replication_type        = var.replication_type
   delete_retention_days   = var.delete_retention_days
-  container_name          = var.container_name
+  storage_container_name          = var.container_name
   public_access           = var.public_access
 }
 
@@ -92,7 +92,7 @@ module "backend" {
   # Storage
   storage_account_name       = var.storage_account_name
   storage_account_primary_key = var.storage_account_primary_key
-  storage_container_name     = var.storage_container_name
+  storage_container_name          = var.storage_container_name
 }
 
 
