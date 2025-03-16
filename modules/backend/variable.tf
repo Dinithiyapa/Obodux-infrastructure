@@ -59,3 +59,26 @@ variable "clerk_publishable_key" {
   description = "Clerk publishable key for authentication"
   type        = string
 }
+
+variable "clerk_jwt_algorithm" {
+  description = "Algorithm used for Clerk JWT"
+  type        = string
+  default     = "RS256"
+}
+
+# Storage Variables
+variable "storage_account_name" {
+  description = "The name of the Azure Storage Account"
+  type        = string
+}
+
+variable "storage_account_primary_key" {
+  description = "The primary access key for the Storage Account"
+  type        = string
+  sensitive   = true
+}
+
+variable "storage_container_name" {
+  description = "The name of the Blob Storage container"
+  type        = string
+}
