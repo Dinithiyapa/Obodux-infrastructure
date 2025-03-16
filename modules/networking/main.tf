@@ -27,6 +27,13 @@ resource "azurerm_subnet" "redis_subnet" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.obodux_vnet.name
   address_prefixes     = ["10.0.3.0/24"]
+  # Delegate the subnet to Redis
+  delegation {
+    name = "redis-delegation"
+    service_delegation {
+      name = "Microsoft.Cache/redis"
+    }
+  }
 }
 
 resource "azurerm_subnet" "public_subnet" {
