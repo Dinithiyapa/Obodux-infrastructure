@@ -19,4 +19,8 @@ resource "azurerm_redis_cache" "bullmq_redis" {
   }
   # Attach to the redis subnet
   subnet_id = var.redis_subnet_id
+   # Ensure the subnet is delegated to Redis
+  depends_on = [
+    azurerm_subnet.redis_subnet
+  ]
 }
