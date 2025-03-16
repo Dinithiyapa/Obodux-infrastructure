@@ -13,7 +13,7 @@ variable "resource_group_name" {
   description = "The name of the resource group"
 }
 
-variable "environment" {
+variable "data_location" {
+  description = "The data residency location for the communication service."
   type        = string
-  description = "Deployment environment (e.g., dev, staging, prod)"
 }
