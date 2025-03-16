@@ -89,7 +89,7 @@ variable "delete_retention_days" {
 }
 
 # Container Variables
-variable "container_name" {
+variable "storage_container_name" {
   description = "The name of the Blob Storage container"
   type        = string
 }
